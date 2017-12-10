@@ -11,9 +11,6 @@ import org.junit.Test
 import org.hamcrest.core.Is.`is`
 import org.junit.Assert.assertThat
 
-/**
- * Created by sergio on 6/18/17.
- */
 class MarsRoverTest {
 
     private val plateau = Plateau(5, 5)

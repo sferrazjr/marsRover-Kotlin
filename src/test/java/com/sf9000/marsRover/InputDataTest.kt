@@ -8,9 +8,6 @@ import java.io.IOException
 import org.hamcrest.core.Is.`is`
 import org.junit.Assert.assertThat
 
-/**
- * Created by sergio on 6/18/17.
- */
 class InputDataTest {
 
     private val INPUT_DATA = "inputData/inputData.txt"
