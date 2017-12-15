@@ -18,26 +18,24 @@ Assume that the square directly North from (x, y) is (x, y+1).
 **OUTPUT:** The output for each rover should be its final co-ordinates and heading.
 
 ## Prerequisites
-You need java 8 and maven version 3.3.9 or newer
+You need java 8 and gradle version 4.4 or newer
 
 ## Installing
 ```
-mvn clean instal
+gradle clean jar
 ```
 
 ## Running
-Run the application using maven.
+Run the application using gradle.
 
 ### run as an application
-```
-mvn exec:java -Dexec.args=./src/test/resources/inputData/inputData.txt
-```
+at the moment only via Intellij
+
 ### run as a service
+at the moment only via Intellij
 
 Start the service (make sure there is no service running on port 8080)
-```
-mvn spring-boot:run
-```
+
 Call the service via command line with cURL
 ```
 curl -X POST -F "file=@./src/test/resources/inputData/inputData.txt" http://localhost:8080/marsRoverService/move
@@ -46,8 +44,8 @@ curl -X POST -F "file=@./src/test/resources/inputData/inputData.txt" http://loca
 
 ## About the code
 
-`MarsRoverServiceApplication` is responsable for starting the service using spring boot.
+`MarsRoverServiceApplication` is responsible for starting the service using spring boot.
 
-The classes `MarsRoverApp` is responsable for executing the application and `MarsRoverController` is the *controller* when using the spring boot version, both handle the inputs and call ``MarsMissionExecution``.
+The classes `MarsRoverApp` is responsible for executing the application and `MarsRoverController` is the *controller* when using the spring boot version, both handle the inputs and call ``MarsMissionExecution``.
 
 ``MarsMissionExecution`` receives the input to set up the ``Plateau`` adding the ``Rover`` into ``Position`` and move each rover. The return is a ``String`` with the position of each ``Rover``.
